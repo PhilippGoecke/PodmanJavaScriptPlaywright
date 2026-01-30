@@ -34,6 +34,8 @@ RUN echo '{\n\
         "@playwright/test": "^1.40.0"\n\
     }\n\
 }' > package.json
+# Create a package-lock.json file
+RUN npm install
 
 # Install Playwright
 RUN npm ci && npx playwright install --with-deps
